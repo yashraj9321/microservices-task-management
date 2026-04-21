@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  discovery-server:
+    image: openjdk:17
+    container_name: discovery-server
+    ports:
+      - "8761:8761"
+
+  api-gateway:
+    image: openjdk:17
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+
+  user-service:
+    image: openjdk:17
+
+  task-service:
+    image: openjdk:17
+
+  notification-service:
+    image: openjdk:17
+
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
